@@ -3,12 +3,16 @@ import { useEffect, useState } from "react"
 const Tictactoe = ()=>{
 
     const [turn, setTurn] = useState("x")
-    const [value, setValue] = useState(Array(9).fill(""))
-    const [win, setWin] = useState()
+    const [value, setValue] = useState(Array(9).fill(""));
+    const [win, setWin] = useState();
+    const [count, setCount] = useState(0);
 
     useEffect(()=>{
         winner()
-    },[value])
+        if(count === 9){
+            setWin("No one")
+        }
+    },[count])
 
     const winner = ()=>{
 
@@ -65,7 +69,7 @@ const Tictactoe = ()=>{
         }
         
         setValue(square)
-       
+        setCount(count+1)
         
     }
     
