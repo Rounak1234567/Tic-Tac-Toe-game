@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const Tictactoe = ()=>{
 
@@ -6,8 +6,12 @@ const Tictactoe = ()=>{
     const [value, setValue] = useState(Array(9).fill(""))
     const [win, setWin] = useState()
 
+    useEffect(()=>{
+        winner()
+    },[value])
+
     const winner = ()=>{
-        
+
         let obj = {
             horizontal: [
                 [0,1,2],
@@ -61,7 +65,7 @@ const Tictactoe = ()=>{
         }
         
         setValue(square)
-        winner()
+       
         
     }
     
