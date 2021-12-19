@@ -1,3 +1,7 @@
+*{
+  background-color: rgb(3, 3, 3);
+}
+
 .App {
   text-align: center;
 }
@@ -37,12 +41,4 @@
   }
 }
 
-.cell{
-  border: 1px solid black;
-  width: 100px;
-  height: 100px;
-}
-.table{
-  display: flex;
-  justify-content: center;
-}
+

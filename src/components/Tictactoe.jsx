@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react"
-
+import { History } from "./History";
+import "./tictactoe.css"
 const Tictactoe = ()=>{
 
-    const [turn, setTurn] = useState("x")
+    const [turn, setTurn] = useState("X")
     const [value, setValue] = useState(Array(9).fill(""));
-    const [win, setWin] = useState();
+    const [win, setWin] = useState(null);
     const [count, setCount] = useState(0);
+    
 
     useEffect(()=>{
         winner()
         if(count === 9){
             setWin("No one")
         }
-    },[count])
+    },[count, win])
 
     const winner = ()=>{
 
@@ -55,9 +57,10 @@ const Tictactoe = ()=>{
 
     const playAgain = ()=>{
         setValue(Array(9).fill(""))
-        setTurn("x")
+        setTurn("X")
         setCount(0)
-        setWin()
+        setWin(null)
+
     }
 
     const handleClick = (n)=>{
@@ -67,18 +70,18 @@ const Tictactoe = ()=>{
         }
         
         let square = [...value]
-        if(turn === "x"){
-            square[n] = "x";
-            setTurn("o")
+        if(turn === "X"){
+            square[n] = "X";
+            setTurn("O")
         }
         else{
-            square[n] = "o";
-            setTurn("x")
+            square[n] = "O";
+            setTurn("X")
         }
         
         setValue(square)
         setCount(count+1)
-        
+
     }
     
 
@@ -88,15 +91,22 @@ const Tictactoe = ()=>{
                 
                 handleClick(n)
                 
-            }} >{value[n]}</td>
+            }} >{value[n] === "X" ? <img style={{width: "80%"}} src="https://lh3.googleusercontent.com/proxy/DGva3tOdttf9mpE20004UpSV091SomaWP8FLCnvpGF4u-VqrpBVeI_dXGxjsMMFnn5JY8PWULcCgkwEKH1AHyvu0zEcTa2CBYhII9PJ1Ro_BtkWDZuotyL_u0hCtEuLW2A6N5P_dbFVXsOl-"/> :
+            value[n] === "O" ? <img style={{width: "80%"}} src="https://i.pinimg.com/originals/35/7b/be/357bbea1ed7a4965538a1bb428d8ec66.jpg"/>:
+            <p></p>
+            }</td>
         )
     }
 
     return(
         <div>
-            <h1>!!Play The Game!!</h1>
-            <h2>Turn of : {turn}</h2>
-            <table className="table">
+            
+            
+            {
+                win === null ? <>
+                <h1 style={{color:"white"}}>!!Play The Game!!</h1>
+                <h2 style={{color:"white"}}>Turn of : {turn}</h2>
+                <table className="table">
                 <tbody>
                     <tr>
                         <Cell n = {0}/>
@@ -115,15 +125,18 @@ const Tictactoe = ()=>{
                     </tr>
                 </tbody>
             </table>
-            {
-                win && (
-                    <div>
-                        <p>{win} is the winner</p>
-                        <button onClick={()=>{
+            <History count = {count} data = {value}/>
+                
+                </> : <div className="result">
+
+                        
+                        <h1 className="winner">{win} is the winner</h1>
+                        <h3 className="reset">Click on the restart button to play again</h3>
+                        
+                        <button className="reset-btn" onClick={()=>{
                             playAgain()
-                        }} >Play Again</button>
+                        }} > Restart </button>
                     </div>
-                )
             }
         </div>
     )

@@ -1,0 +1,42 @@
+.result{
+    background-image: url("https://thumbs.gfycat.com/CorruptBriefGreatwhiteshark-max-1mb.gif");
+    width: 100%;
+    height: 800px;
+}
+
+.reset-btn{
+    background-color: blue;
+    color: white;
+    height: 50px;
+    width: 100px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 47%;
+}
+
+.winner{
+    color: rgb(142, 142, 196);
+    position: absolute;
+    top: 38%;
+    left: 42%;
+}
+
+.reset{
+    color: rgb(142, 142, 196);
+    position: absolute;
+    top: 48%;
+    left: 38%;
+}
+.cell{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+}
+  
+.table{
+    display: flex;
+    justify-content: center;
+}
