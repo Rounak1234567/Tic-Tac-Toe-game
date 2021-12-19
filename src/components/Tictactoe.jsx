@@ -46,10 +46,18 @@ const Tictactoe = ()=>{
                     value[p[1]] === value[p[2]]
                 ){
                     setWin(value[p[0]])
+                    
                 }
             })
         }
 
+    }
+
+    const playAgain = ()=>{
+        setValue(Array(9).fill(""))
+        setTurn("x")
+        setCount(0)
+        setWin()
     }
 
     const handleClick = (n)=>{
@@ -111,6 +119,9 @@ const Tictactoe = ()=>{
                 win && (
                     <div>
                         <p>{win} is the winner</p>
+                        <button onClick={()=>{
+                            playAgain()
+                        }} >Play Again</button>
                     </div>
                 )
             }
