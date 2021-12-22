@@ -3,7 +3,9 @@ import "./tictactoe.css"
 import imgx from "../images/x.png"
 import imgo from "../images/o.png"
 import imgt from "../images/t.jpg"
-//import audioa from "../audio/a.mp3"
+import audioa from "../audio/a.mp3"
+
+
 
 const Tictactoe = () => {
 
@@ -11,12 +13,6 @@ const Tictactoe = () => {
     const [value, setValue] = useState(Array(9).fill(""));
     const [win, setWin] = useState(null);
     const [count, setCount] = useState(0);
-
-
-    // const Aud = () => {
-    //     const Audio11 = new Audio({ audioa })
-    //     return Audio11.play();
-    // }
 
 
 
@@ -106,7 +102,7 @@ const Tictactoe = () => {
                 handleClick(n)
 
             }} >{value[n] === "X" ? <img style={{ width: "60%" }} src={imgx} alt="none" /> :
-                value[n] === "O" ? <img style={{ width: "60%" }} src={imgo} alt="none"  /> :
+                value[n] === "O" ? <img style={{ width: "60%" }} src={imgo} alt="none" /> :
                     <p></p>
                 }</td>
         )
@@ -115,13 +111,16 @@ const Tictactoe = () => {
     return (
 
         <div>
-            
+
 
             {
                 win === null ?
                     <>
 
 
+                        <audio controls autoplay>
+                            <source src={audioa} type="audio/ogg" />
+                        </audio>
                         <h1 style={{ color: "white" }}>!!Play The Game!!</h1>
                         <h2 style={{ color: "white" }}>Turn of : {turn}</h2>
                         <table className="table">
