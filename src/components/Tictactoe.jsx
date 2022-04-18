@@ -18,11 +18,16 @@ const Tictactoe = () => {
 
 
     useEffect(() => {
-        winner()
+        winner();
+    })
+
+
+    useEffect(() => {
         if (count === 9) {
             setWin("No one")
         }
-    }, [count, win])
+    }, [count]);
+
 
     const winner = () => {
 
@@ -109,16 +114,10 @@ const Tictactoe = () => {
     }
 
     return (
-
         <div>
-
-
             {
                 win === null ?
                     <>
-
-
-                        
                         <h1 style={{ color: "white" }}>!!Play The Game!!</h1>
                         <h2 style={{ color: "white" }}>Turn of : {turn}</h2>
                         <table className="table">
@@ -140,31 +139,21 @@ const Tictactoe = () => {
                                 </tr>
                             </tbody>
                         </table>
-
-
                     </>
                     : win === "No one" ?
                         <>
-
-
                             <div>
-
                                 <h1 style={{ color: "white" }}>!Its a Tie!</h1>
                                 <img src={imgt} alt="none" />
                                 <h3 className="reset">Click on the restart button to play again</h3>
-
                                 <button className="reset-btn" onClick={() => {
                                     playAgain()
                                 }} > Restart </button>
                             </div>
                         </> :
-
                         <div className="result">
-
-
                             <h1 className="winner">{win} is the winner</h1>
                             <h3 className="reset">Click on the restart button to play again</h3>
-
                             <button className="reset-btn" onClick={() => {
                                 playAgain()
                             }} > Restart </button>

@@ -1,33 +1,46 @@
 .result{
     background-image: url("https://thumbs.gfycat.com/CorruptBriefGreatwhiteshark-max-1mb.gif");
     width: 100%;
-    height: 800px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .reset-btn{
-    background-color: blue;
-    color: white;
-    height: 50px;
-    width: 100px;
-    border-radius: 25px;
-    cursor: pointer;
-    position: absolute;
-    top: 60%;
-    left: 47%;
+
+  background-color: #6d87cc;
+  border-radius: 100px;
+  box-shadow: rgba(43, 40, 233, 0.2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: rgb(12, 14, 12);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
+
+.reset-btn:hover {
+  box-shadow: rgba(37, 40, 223, 0.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
 
 .winner{
     color: rgb(142, 142, 196);
-    position: absolute;
-    top: 38%;
-    left: 42%;
+    
 }
 
 .reset{
     color: rgb(142, 142, 196);
-    position: absolute;
-    top: 48%;
-    left: 38%;
 }
 .cell{
     border: 1px solid black;
@@ -41,6 +54,8 @@
     justify-content: center;
 }
 
-.a{
-   
+@media screen and (max-width:450px) {
+    .result{
+        height: 900px;
+    }
 }
