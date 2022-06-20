@@ -45,28 +45,10 @@ Start the server
 ```
 
 ## Screenshots
-Home Page
-![Home Page](https://i.ibb.co/B4cZnhg/Home-1.png) 
 
-![Home Page](https://i.ibb.co/CmwkX83/Home-2.png)
+Sample Gameplay
 
-![Home Page](https://i.ibb.co/qkyN3y4/Home-3.png)
-
-Login Page
-![Home Page](https://i.ibb.co/9t4PKSV/Login.png)
-
-SignUp Page
-![Home Page](https://i.ibb.co/9t4PKSV/Login.png)
-
-Car Booking Page
-![Home Page](https://i.ibb.co/YX97hyk/Car-Booking.png)
-
-Payments Page
-![Home Page](https://i.ibb.co/jb101Ln/Payment.png)
-
-Previous Bookings
-![Home Page](https://i.ibb.co/nByxgtK/previous-Bookings.png)
-
+![Home Page](https://i.ibb.co/g3R0dVf/Screenshot-82.png)
 
 
 
