@@ -1,29 +1,23 @@
 
-# AdRENTure
+# Tic Tac Toe
 
 This is a solo project, where users can play the famous Tic Tac Toe Game with 2 players.
 
 
 ## Demo
 
-Click on this link to see the video Presentation of this Project:- https://drive.google.com/file/d/1cnyFc6laHOwIodlSkoGl5I25vo3vKcTo/view?usp=sharing
-
-## Backend Repo Link
-Click on the link to checkout the backend code:- https://github.com/Rounak1234567/AdRENTure-backend
-
+Click on this link to see the video Presentation of this Project:- https://drive.google.com/file/d/1GXBpg_wQ0hzulMgOJ15fzYzvTS1OWD0n/view?usp=sharing
 
 ## Tech Stack
 
-**Client:** React, Redux, Antd
-
-**Server:** Node, Express, MongoDB
+**Client:** React
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/Rounak1234567/AdRENTure-frontend.git
+  git clone https://github.com/Rounak1234567/Tic-Tac-Toe-game.git
 ```
 
 Go to the project directory
