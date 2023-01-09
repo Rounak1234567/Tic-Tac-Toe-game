@@ -13,9 +13,9 @@ const Tictactoe = () => {
     const [value, setValue] = useState(Array(9).fill(""));
     const [win, setWin] = useState(null);
     const [count, setCount] = useState(0);
+    const [w,setW] = useState(0)
     const history = useRef([])
     const [h,setH] = useState(0)
-
 
 
 
@@ -23,7 +23,7 @@ const Tictactoe = () => {
         winner();
         history.current = [...history.current, value]
         //setH(h=>h+1)
-    },[value])
+    },[w])
 
 
     useEffect(() => {
@@ -80,6 +80,7 @@ const Tictactoe = () => {
     }
 
     const handleClick = (n) => {
+        setW(w+1)
         if (value[n] !== "") {
             alert("Already Clicked");
             return;
@@ -119,6 +120,7 @@ const Tictactoe = () => {
     const handleBack = ()=>{
 
         if(count<=0){
+            alert("This is where you started, you can't go any further back.");
             setTurn("X")
             return;
         }
@@ -144,6 +146,34 @@ const Tictactoe = () => {
         }
 
         
+    }
+
+
+    const handleNext = ()=>{
+        if(h+1 >= history.current.length){
+            alert("Sorry Time travel is not allowed, you are already at the last move")
+            return;
+        }
+
+        else{
+            if (turn === "X") {
+                setTurn("O")
+            }
+            else {
+                setTurn("X")
+            }
+            let square = [...history.current[h+1]];
+            let k = 0;
+            for(let i = 0; i < square.length; i++){
+                if(square[i] !== ""){
+                    k++;
+                }
+            }
+            setValue(square);    
+            setH(h+1)
+            setCount(k)
+            console.log(history.current[h+1],h)
+        }
     }
 
     return (
@@ -173,7 +203,8 @@ const Tictactoe = () => {
                             </tbody>
                         </table>
                         <br /><br />
-                        <button className="reset-btn" onClick={handleBack}>Back</button>
+                        <button className="reset-btn" onClick={handleBack}>↶</button>
+                        <button className="reset-btn" onClick={handleNext}>↷</button>
                     </>
                     : win === "No one" ?
                         <>
