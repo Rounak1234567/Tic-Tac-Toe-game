@@ -3,7 +3,8 @@ import "./tictactoe.css"
 import imgx from "../images/x.png"
 import imgo from "../images/o.png"
 import imgt from "../images/t.jpg"
-
+import audio1 from "../audio/audio1.wav"
+import audio2 from "../audio/audio2.wav"
 
 
 
@@ -77,9 +78,11 @@ const Tictactoe = () => {
         setTurn("X")
         setCount(0)
         setWin(null)
+        history.current=[Array(9).fill("")];
     }
 
     const handleClick = (n) => {
+        
         setW(w+1)
         if (value[n] !== "") {
             alert("Already Clicked");
@@ -99,6 +102,11 @@ const Tictactoe = () => {
         setValue(square)
         setH(history.current.length)
         setCount(count + 1)
+
+        let audiox = document.getElementById("audiox");
+        let audioo = document.getElementById("audioo");
+        if(turn==="X") audiox.play();
+        else audioo.play()
 
     }
 
@@ -203,8 +211,8 @@ const Tictactoe = () => {
                             </tbody>
                         </table>
                         <br /><br />
-                        <button className="reset-btn" onClick={handleBack}>↶</button>
-                        <button className="reset-btn" onClick={handleNext}>↷</button>
+                        <button className="undo-redo-btn" onClick={handleBack}>↶</button>
+                        <button className="undo-redo-btn" onClick={handleNext}>↷</button>
                     </>
                     : win === "No one" ?
                         <>
@@ -225,8 +233,15 @@ const Tictactoe = () => {
                             }} > Restart </button>
                         </div>
             }
+            <audio controls id="audiox">
+                <source src={audio1}/>
+            </audio>
+            <audio controls id="audioo">
+                <source src={audio2}/>
+            </audio>
         </div>
     )
 }
+
 
 export { Tictactoe }
